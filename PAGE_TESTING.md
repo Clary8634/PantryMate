@@ -29,7 +29,7 @@ The home page serves as the landing page for users. It provides an introduction 
 7. **Error Handling Test**:
    - Test that the page handles and displays an appropriate message if there are issues with submitting ingredients (e.g., empty search input).
 
-![](\page_testing_photos\page 1.PNG)
+![](page_testing_photos\page 1.PNG)
 
 
 
