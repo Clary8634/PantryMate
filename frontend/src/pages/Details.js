@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
+import API_BASE from "../apiConfig";
 
 export default function Details() {
   const location = useLocation();
@@ -17,7 +18,7 @@ export default function Details() {
 
     async function loadRecipe() {
       try {
-        const res = await fetch(`http://127.0.0.1:5000/api/recipe/${id}`);
+        const res = await fetch(`${API_BASE}/api/recipe/${id}`);
         const data = await res.json();
         setRecipe(data);
       } catch {
@@ -34,7 +35,7 @@ export default function Details() {
     if (!recipe) return;
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/api/save", {
+      const res = await fetch(`${API_BASE}/api/save`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

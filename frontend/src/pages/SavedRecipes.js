@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./SavedRecipes.css";
+import API_BASE from "../apiConfig";
 
 export default function SavedRecipes() {
   const [recipes, setRecipes] = useState([]);
@@ -11,7 +12,7 @@ export default function SavedRecipes() {
 
   async function loadSaved() {
     try {
-      const res = await fetch("http://127.0.0.1:5000/api/saved");
+      const res = await fetch(`${API_BASE}/api/saved`);
       const data = await res.json();
       setRecipes(data || []);
     } catch (e) {
@@ -23,7 +24,7 @@ export default function SavedRecipes() {
     if (!window.confirm("Delete this saved recipe?")) return;
 
     try {
-      const res = await fetch(`http://127.0.0.1:5000/api/delete/${id}`, {
+      const res = await fetch(`${API_BASE}/api/delete/${id}`, {
         method: "DELETE",
       });
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Suggestions.css";
+import API_BASE from "../apiConfig";
 
 export default function Suggestions() {
   const location = useLocation();
@@ -16,7 +17,7 @@ export default function Suggestions() {
     async function fetchRecipes() {
       setLoading(true);
       try {
-        const res = await fetch("http://127.0.0.1:5000/api/search", {
+        const res = await fetch(`${API_BASE}/api/search`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ingredients })
@@ -42,7 +43,7 @@ export default function Suggestions() {
         summary: recipe.summary || ""
       };
 
-      const res = await fetch("http://127.0.0.1:5000/api/save", {
+      const res = await fetch(`${API_BASE}/api/save`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
