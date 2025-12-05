@@ -6,8 +6,8 @@ Pantrymate — A Recipe Recommendation System Based on User Ingredients
 ## Project Tracker Link
 https://trello.com/b/xePrR2mR/pantrymate
 
-## Demo Video
-See presentation video
+## Presentation Video
+https://www.youtube.com/watch?v=2LcJzq8HZSI
 
 ## Repository Link
 https://github.com/Clary8634/PantryMate/
@@ -52,3 +52,4 @@ https://pantrymate-frontend.onrender.com
 - Spoonacular API rate limits can cause missing recipe data given the project is on the Starter Plan
 - Missing instructions or summaries occur when API does not return values  
 - Cloudflare went down (again) during Render deployment; may happen during grading
+
